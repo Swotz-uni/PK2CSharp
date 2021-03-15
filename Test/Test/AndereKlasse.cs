@@ -10,6 +10,7 @@ namespace Test
     {
         public delegate void MyDelegate(string Text);
         public event MyDelegate delegateEvent;
+        public event MyDelegate zweites;
         public void triggerEvent(int low, int high,int n)
         {
             Random r = new Random();
@@ -21,6 +22,7 @@ namespace Test
                 if (delegateEvent != null)
                 {
                     delegateEvent(String.Format("Event zum {0}. Mal getriggert.", i + 1));
+                    zweites("" + i);
                 }
             }
         }
